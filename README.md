@@ -1,18 +1,16 @@
-# pyNCMDUMP
+# 项目介绍
 
-This is a simple commandline tool that helps you convert an encrypted `.ncm` file into its original, more commonly seen audio types (e.g. `flac` and `mp3`). 
+将网易云音乐的 `.ncm` 格式转换成 `.flac` 格式和 `.mp3` 格式. 
 
-## Dependencies
+## 需要工具
 
 - Python3
-- Crypto.Cipher package, which can be installed by `pip3 install pycrypto`
+- Crypto.Cipher 依赖包, 在命令行输入 `pip3 install pycryptodome` 安装(原安装方法 `pip3 install pycrypto` 已不可用)
 
-## Usage
-
-The usage would require basic knowledge of running Python3 in a terminal:
+## 使用方法
 
 ```bash
 python3 ncmdump.py [files] ...
 ```
 
-Credit to [anonymous5l](https://github.com/anonymous5l), who wrote the original version of [ncmdump](https://github.com/anonymous5l/ncmdump) in C++.
+将[files]更改为文件名(需带 `.ncm` 后缀, 支持批量转换, 多个文件名间用空格分开 e.g: `python3 numdump.py a.ncm b.ncm`)
