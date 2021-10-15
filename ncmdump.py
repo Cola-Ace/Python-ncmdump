@@ -6,7 +6,6 @@ import os
 import sys
 from Crypto.Cipher import AES
 
-
 def dump(file_path):
     # hex to str
     core_key = binascii.a2b_hex("687A4852416D736F356B496E62617857")
@@ -75,7 +74,14 @@ def dump(file_path):
     return file_name
 
 
-if __name__ == '__main__':
-    file_list = sys.argv[1:]
-    for file in file_list:
-        dump(file)
+if __name__ == "__main__":
+    __list__ = sys.argv[1:]
+    if ("--no-output" in __list__):
+        del __list__[__list__.index("--no-output")]
+        for file in __list__:
+            dump(file)
+    else:
+        for file in __list__:
+            print("正在转换 (" + str(__list__.index(file) + 1) + "/" + str(len(__list__)) + "): " + file)
+            print("转换成功! 输出文件名为 " + dump(file))
+        print("转换完成! 共转换 " + str(len(__list__)) + " 个文件")
